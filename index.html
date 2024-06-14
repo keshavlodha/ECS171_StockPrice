@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Price Prediction</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input, select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/predict">
+        <h1>Stock Price Prediction</h1>
+        <label for="symbol">Enter stock symbol:</label>
+        <input type="text" name="symbol" id="symbol" required>
+        <br>
+        <label for="date">Enter date (YYYY-MM-DD):</label>
+        <input type="text" name="date" id="date" required>
+        <br>
+        <label for="model_type">Select model:</label>
+        <select name="model_type" id="model_type">
+            <option value="lr">Linear Regression</option>
+            <option value="dt">Decision Tree</option>
+            <option value="dt">Random Forest</option>
+        </select>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
